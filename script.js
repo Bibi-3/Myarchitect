@@ -1,79 +1,134 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const btnLogin = document.getElementById('btn-login');
-    const btnCadastro = document.getElementById('btn-cadastro');
-    const formArea = document.getElementById('form-area');
+document.addEventListener('DOMContentLoaded', function() {
+    // Obter os elementos dos botões e modais
+    const loginBtn = document.getElementById('loginBtn');
+    const signupBtn = document.getElementById('signupBtn');
 
-    btnLogin.addEventListener('click', () => {
-        formArea.innerHTML = `
-            <div class="form-box">
-                <h4>Login</h4>
-                <form>
-                    <label for="login-user">E-mail ou Usuário</label>
-                    <input type="text" id="login-user" name="login-user" required>
-                    
-                    <label for="login-pass">Senha</label>
-                    <input type="password" id="login-pass" name="login-pass" required>
-                    
-                    <button type="submit">Entrar</button>
-                </form>
-            </div>
-        `;
+    const loginModal = document.getElementById('loginModal');
+    const signupModal = document.getElementById('signupModal');
+    const clientSignupModal = document.getElementById('clientSignupModal');
+    const professionalSignupModal = document.getElementById('professionalSignupModal');
+
+    const closeButtons = document.querySelectorAll('.close-button');
+
+    const signupClientBtn = document.getElementById('signupClientBtn');
+    const signupProfessionalBtn = document.getElementById('signupProfessionalBtn');
+
+    const loginForm = document.getElementById('loginForm');
+    const clientSignupForm = document.getElementById('clientSignupForm');
+    const professionalSignupForm = document.getElementById('professionalSignupForm');
+
+    // Função para abrir um modal
+    function openModal(modal) {
+        modal.style.display = 'block';
+    }
+
+    // Função para fechar um modal
+    function closeModal(modal) {
+        modal.style.display = 'none';
+    }
+
+    // Event Listeners para abrir modais
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function() {
+            openModal(loginModal);
+        });
+    }
+
+    if (signupBtn) {
+        signupBtn.addEventListener('click', function() {
+            openModal(signupModal);
+        });
+    }
+
+    if (signupClientBtn) {
+        signupClientBtn.addEventListener('click', function() {
+            closeModal(signupModal); // Fecha o modal de escolha
+            openModal(clientSignupModal); // Abre o modal de cadastro de cliente
+        });
+    }
+
+    if (signupProfessionalBtn) {
+        signupProfessionalBtn.addEventListener('click', function() {
+            closeModal(signupModal); // Fecha o modal de escolha
+            openModal(professionalSignupModal); // Abre o modal de cadastro de profissional
+        });
+    }
+
+    // Event Listeners para fechar modais
+    closeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            closeModal(loginModal);
+            closeModal(signupModal);
+            closeModal(clientSignupModal);
+            closeModal(professionalSignupModal);
+        });
     });
 
-    btnCadastro.addEventListener('click', () => {
-        formArea.innerHTML = `
-            <div class="form-box">
-                <h4>Cadastro</h4>
-                <button id="cad-cliente" style="margin-bottom:12px;width:100%;">Sou Cliente</button>
-                <button id="cad-profissional" style="width:100%;">Sou Profissional</button>
-            </div>
-        `;
+    // Fechar modais clicando fora da área do conteúdo
+    window.addEventListener('click', function(event) {
+        if (event.target == loginModal) {
+            closeModal(loginModal);
+        }
+        if (event.target == signupModal) {
+            closeModal(signupModal);
+        }
+        if (event.target == clientSignupModal) {
+            closeModal(clientSignupModal);
+        }
+        if (event.target == professionalSignupModal) {
+            closeModal(professionalSignupModal);
+        }
+    });
 
-        document.getElementById('cad-cliente').addEventListener('click', () => {
-            formArea.innerHTML = `
-                <div class="form-box">
-                    <h4>Cadastro de Cliente</h4>
-                    <form>
-                        <label for="nome-cliente">Nome Completo</label>
-                        <input type="text" id="nome-cliente" name="nome-cliente" required>
-                        
-                        <label for="email-cliente">E-mail</label>
-                        <input type="email" id="email-cliente" name="email-cliente" required>
-                        
-                        <label for="senha-cliente">Senha</label>
-                        <input type="password" id="senha-cliente" name="senha-cliente" required>
-                        
-                        <button type="submit">Cadastrar</button>
-                    </form>
-                </div>
-            `;
+    // Lógica para envio dos formulários (exemplo simples, sem backend)
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            alert(`Login tentado com Email/Usuário: ${email} e Senha: ${password}`);
+            // Aqui você integraria com seu backend para autenticação real
+            closeModal(loginModal);
+            loginForm.reset(); // Limpa o formulário
         });
+    }
 
-        document.getElementById('cad-profissional').addEventListener('click', () => {
-            formArea.innerHTML = `
-                <div class="form-box">
-                    <h4>Cadastro de Profissional</h4>
-                    <form>
-                        <label for="nome-prof">Nome Completo</label>
-                        <input type="text" id="nome-prof" name="nome-prof" required>
-                        
-                        <label for="email-prof">E-mail</label>
-                        <input type="email" id="email-prof" name="email-prof" required>
-                        
-                        <label for="profissao">Profissão</label>
-                        <select id="profissao" name="profissao" required>
-                            <option value="">Selecione</option>
-                            <option value="arquiteto">Arquiteto</option>
-                            <option value="engenheiro">Engenheiro Civil</option>
-                        </select>
-                        
-                        <label for="senha-prof">Senha</label>
-                        <input type="password" id="senha-prof" name="senha-prof" required>
-                        
-                        <button type="submit">Cadastrar</button>
-                    </form>
-                </div>
-            `;
+    if (clientSignupForm) {
+        clientSignupForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('clientName').value;
+            const email = document.getElementById('clientEmail').value;
+            const password = document.getElementById('clientPassword').value;
+            alert(`Cadastro de Cliente: Nome - ${name}, Email - ${email}`);
+            // Aqui você integraria com seu backend para registrar o cliente
+            closeModal(clientSignupModal);
+            clientSignupForm.reset();
+        });
+    }
+
+    if (professionalSignupForm) {
+        professionalSignupForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('professionalName').value;
+            const email = document.getElementById('professionalEmail').value;
+            const password = document.getElementById('professionalPassword').value;
+            const type = document.getElementById('professionalType').value;
+            const creaCau = document.getElementById('professionalCreaCau').value;
+            alert(`Cadastro de Profissional: Nome - ${name}, Email - ${email}, Tipo - ${type}, CREA/CAU - ${creaCau}`);
+            // Aqui você integraria com seu backend para registrar o profissional
+            closeModal(professionalSignupModal);
+            professionalSignupForm.reset();
+        });
+    }
+
+    // Scroll suave para as âncoras da navegação
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
         });
     });
 });
