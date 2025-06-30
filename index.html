@@ -1,97 +1,195 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Architect_My Project</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="container header-container">
-            <h1>My Architect_My Project</h1>
+        <div class="container">
+            <div class="logo">
+                <h1>My Architect_My Project</h1>
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#modelos">Modelos</a></li>
-                    <li><a href="#ferramentas">Ferramentas</a></li>
-                    <li><a href="#projetos">Projetos Prontos</a></li>
-                    <li><a href="#cadastro-login">Cadastro/Login</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#tools">Ferramentas</a></li>
+                    <li><a href="#about">Sobre Nós</a></li>
+                    <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
+            <div class="auth-buttons">
+                <button id="loginBtn">Login</button>
+                <button id="signupBtn">Cadastro</button>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container hero-content">
-                <h2>Auxiliando engenheiros, arquitetos e clientes em seus projetos!</h2>
-                <p>Explore ferramentas, modelos e projetos prontos criados por profissionais.</p>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Conectando Sonhos e Realidade</h2>
+                <p>Encontre os melhores profissionais e projetos para sua construção ou reforma.</p>
+                <a href="#projects" class="btn-primary">Ver Projetos</a>
             </div>
         </section>
 
-        <section id="modelos" class="container section-card">
-            <h3>Modelos para Profissionais</h3>
-            <div class="card-list">
-                <div class="card">
-                    <h4>Planilha de Orçamento</h4>
-                    <p>Faça o orçamento detalhado da sua obra.</p>
-                </div>
-                <div class="card">
-                    <h4>Modelo de Memorial Descritivo</h4>
-                    <p>Baixe um memorial descritivo pronto para adaptar ao seu projeto.</p>
-                </div>
-                <div class="card">
-                    <h4>Cronograma de Obra</h4>
-                    <p>Organize e planeje as etapas do seu projeto.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="ferramentas" class="container section-card">
-            <h3>Ferramentas de Auxílio</h3>
-            <div class="card-list">
-                <div class="card">
-                    <h4>Calculadora de Materiais</h4>
-                    <p>Calcule a quantidade de materiais necessários.</p>
-                </div>
-                <div class="card">
-                    <h4>Simulador de Custos</h4>
-                    <p>Faça simulações de custos para diferentes tipos de obras.</p>
+        <section id="services" class="section-padding">
+            <div class="container">
+                <h2>Nossos Serviços</h2>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <h3>Para Engenheiros Civis</h3>
+                        <p>Modelos, ferramentas de cálculo, normas técnicas e muito mais para otimizar seus projetos.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Para Arquitetos</h3>
+                        <p>Inspiração, blocos CAD, texturas, softwares de design e modelos 3D para suas criações.</p>
+                    </div>
+                    <div class="service-item">
+                        <h3>Para Clientes</h3>
+                        <p>Explore um vasto catálogo de projetos prontos, encontre profissionais qualificados e tire suas ideias do papel.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="projetos" class="container section-card">
-            <h3>Projetos Prontos para Clientes</h3>
-            <div class="card-list">
-                <div class="card">
-                    <h4>Casa Térrea 100m²</h4>
-                    <p>Projeto pronto de casa térrea com 3 quartos.</p>
+        <section id="projects" class="section-padding bg-light">
+            <div class="container">
+                <h2>Projetos Prontos para Você</h2>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <img src="https://via.placeholder.com/300x200?text=Projeto+Residencial+1" alt="Projeto Residencial 1">
+                        <h3>Projeto Residencial Moderno</h3>
+                        <p>Um lar com design arrojado e espaços integrados.</p>
+                    </div>
+                    <div class="project-item">
+                        <img src="https://via.placeholder.com/300x200?text=Projeto+Comercial+2" alt="Projeto Comercial 2">
+                        <h3>Escritório Funcional</h3>
+                        <p>Ambiente de trabalho que une produtividade e conforto.</p>
+                    </div>
+                    <div class="project-item">
+                        <img src="https://via.placeholder.com/300x200?text=Projeto+Interiores+3" alt="Projeto Interiores 3">
+                        <h3>Interiores Clássicos</h3>
+                        <p>Decoração elegante e atemporal para diversos ambientes.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <h4>Sobrado Moderno</h4>
-                    <p>Sobrado com fachada contemporânea e ambientes integrados.</p>
+                <button class="btn-secondary">Ver Mais Projetos</button>
+            </div>
+        </section>
+
+        <section id="tools" class="section-padding">
+            <div class="container">
+                <h2>Ferramentas e Recursos</h2>
+                <div class="tool-grid">
+                    <div class="tool-item">
+                        <h3>Calculadora de Materiais</h3>
+                        <p>Estime a quantidade de materiais para sua obra.</p>
+                    </div>
+                    <div class="tool-item">
+                        <h3>Biblioteca CAD</h3>
+                        <p>Acesso a blocos e detalhes construtivos.</p>
+                    </div>
+                    <div class="tool-item">
+                        <h3>Normas Técnicas</h3>
+                        <p>Consulte as principais normas da ABNT.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="cadastro-login" class="container">
-            <h3>Área de Cadastro e Login</h3>
-            <div class="cadastro-login-buttons">
-                <button id="btn-login">Login</button>
-                <button id="btn-cadastro">Cadastro</button>
+        <section id="about" class="section-padding bg-light">
+            <div class="container">
+                <h2>Sobre Nós</h2>
+                <p>O <strong>My Architect_My Project</strong> nasceu da paixão por conectar pessoas e transformar ideias em realidade. Nosso objetivo é ser a plataforma de referência para engenheiros civis, arquitetos e clientes, oferecendo recursos valiosos, modelos de projetos inspiradores e uma comunidade vibrante para impulsionar o setor da construção civil.</p>
             </div>
-            <div id="form-area"></div>
+        </section>
+
+        <section id="contact" class="section-padding">
+            <div class="container">
+                <h2>Fale Conosco</h2>
+                <p>Avenida Arapongas n 150 - Arapongas-PR, CEP 86700-100</p>
+                <p>Email: contato@myarchitectmyproject.com</p>
+                <p>Telefone: (XX) XXXX-XXXX</p>
+            </div>
         </section>
     </main>
 
-    <footer id="contato">
+    <footer>
         <div class="container">
-            <p><b>Endereço:</b> Avenida Arapongas n 150 - cidade Arapongas-PR, CEP 86700100</p>
-            <p>&copy; 2025 My Architect_My Project</p>
+            <p>&copy; 2025 My Architect_My Project. Todos os direitos reservados.</p>
         </div>
     </footer>
-    <script src="scripts.js"></script>
+
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="loginEmail">Email ou Nome de Usuário:</label>
+                <input type="text" id="loginEmail" name="loginEmail" required>
+                <label for="loginPassword">Senha:</label>
+                <input type="password" id="loginPassword" name="loginPassword" required>
+                <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Cadastro</h2>
+            <div class="signup-options">
+                <button id="signupClientBtn" class="btn-secondary">Sou Cliente</button>
+                <button id="signupProfessionalBtn" class="btn-secondary">Sou Profissional</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="clientSignupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Cadastro de Cliente</h2>
+            <form id="clientSignupForm">
+                <label for="clientName">Nome Completo:</label>
+                <input type="text" id="clientName" name="clientName" required>
+                <label for="clientEmail">Email:</label>
+                <input type="email" id="clientEmail" name="clientEmail" required>
+                <label for="clientPassword">Senha:</label>
+                <input type="password" id="clientPassword" name="clientPassword" required>
+                <button type="submit" class="btn-primary">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="professionalSignupModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Cadastro de Profissional</h2>
+            <form id="professionalSignupForm">
+                <label for="professionalName">Nome Completo:</label>
+                <input type="text" id="professionalName" name="professionalName" required>
+                <label for="professionalEmail">Email:</label>
+                <input type="email" id="professionalEmail" name="professionalEmail" required>
+                <label for="professionalPassword">Senha:</label>
+                <input type="password" id="professionalPassword" name="professionalPassword" required>
+                <label for="professionalType">Tipo de Profissional:</label>
+                <select id="professionalType" name="professionalType" required>
+                    <option value="">Selecione</option>
+                    <option value="engenheiro">Engenheiro Civil</option>
+                    <option value="arquiteto">Arquiteto</option>
+                </select>
+                <label for="professionalCreaCau">CREA/CAU:</label>
+                <input type="text" id="professionalCreaCau" name="professionalCreaCau" required>
+                <button type="submit" class="btn-primary">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
